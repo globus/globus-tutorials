@@ -1,3 +1,6 @@
+# Enable social_django and django_extensions apps
+python manage.py migrate
+
 # Copy static resources
 python manage.py collectstatic
 
