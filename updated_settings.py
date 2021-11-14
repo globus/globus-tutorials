@@ -30,7 +30,7 @@ SEARCH_INDEXES = {
             },
         ],
         'filter_match': 'match-all',
-        'template_override_dir': 'sfiles',
+        'template_override_dir': '',
         'test_index': True,
     }
 }
