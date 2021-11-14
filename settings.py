@@ -17,7 +17,6 @@ log = logging.getLogger(__name__)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -25,8 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # You can generate a secure secret key with `openssl rand -hex 32`
 SECRET_KEY = 'django-insecure-47f(ub2qs-n!b@&&)tis&l$&qf1%^@&jy-95jx!bahqrm^19m2'
 # Your portal credentials for enabling user login via Globus Auth
-SOCIAL_AUTH_GLOBUS_KEY = ''
-SOCIAL_AUTH_GLOBUS_SECRET = ''
+SOCIAL_AUTH_GLOBUS_KEY = 'YOUR_CLIENT_ID'
+SOCIAL_AUTH_GLOBUS_SECRET = 'YOUR_SECRET'
 
 # This is a general Django setting if views need to redirect to login
 # https://docs.djangoproject.com/en/3.2/ref/settings/#login-url
@@ -40,8 +39,9 @@ SOCIAL_AUTH_GLOBUS_SCOPE = [
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    'scN.globusdemo.org',
+]
 
 # Application definition
 INSTALLED_APPS = [
@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'globus_portal_framework',
     'social_django',
-  
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -97,17 +97,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'myportal.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 LOGGING = {
     'version': 1,
@@ -123,26 +120,18 @@ LOGGING = {
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-
 STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 try:
