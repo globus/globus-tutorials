@@ -1,3 +1,7 @@
+# Redirect URLs for Globus Auth client registration
+https://tutN.globusdemo.org:8443/
+https://tutN.globusdemo.org:8443/complete/globus/
+
 # Set the base dir for the Django project
 export PROJECT_SLUG="<YOUR_NAME>"
 
