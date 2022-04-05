@@ -13,15 +13,14 @@ cd ./<project_slug>
 # 5. Install dependent libs
 pip install -r requirements.txt
 
+# 6. Update the Django `settings.py` file and add `django_extensions` app.
+# Edit `~/<project_slug>/<project_slug>/settings/base.py` and add ``django_extensions',` to `INSTALLED_APPS`.
 
-
-# Enable social_django and django_extensions apps
+# 7. Complete the configuration
 python manage.py migrate
-
-# Copy static resources
 python manage.py collectstatic
 
-# Run the Globus portal
+# 8. Run the Globus portal!
 python manage.py runserver_plus 0.0.0.0:8443 \
 --cert-file /opt/ssl/globusdemo.org.cert \
 --key-file /opt/ssl/globusdemo.org.key \
