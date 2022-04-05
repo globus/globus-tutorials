@@ -1,9 +1,6 @@
 <!-- Overrides ~/$PROJECT_SLUG/$PROJECT_SLUG/fields.py -->
 
-from dateutil.parser import isoparse
-from urllib.parse import urlsplit, urlunsplit, urlunparse, urlencode
-
-import os
+from urllib.parse import urlsplit, urlunsplit, urlencode
 
 def title(result):
     return result[0]['files'][0]['filename']
