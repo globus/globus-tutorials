@@ -1,9 +1,7 @@
-<!-- 
-    Overrides ~/$PROJECT_SLUG/$PROJECT_SLUG/settings/search.py 
-    Replace only the SEARCH_INDEXES dictionary as shown
--->
-
-....
+'''
+Replace the SEARCH_INDEXES dictionary in
+~/$PROJECT_SLUG/$PROJECT_SLUG/settings/search.py 
+'''
 
 SEARCH_INDEXES = {
     "terrafusion": {
