@@ -1,17 +1,19 @@
-# Activate the Python environment
+# 1. Activate the Python environment
 source ~/.portal/bin/activate
 
-# Install dependent libs
+# 2. Install dependent libs
 pip install django-extensions Werkzeug pyopenssl cookiecutter
 
-# Point cookiecutter to the Globus portal repository
+# 3. Point cookiecutter to the Globus portal repository
 cookiecutter https://github.com/globus/cookiecutter-django-globus-app
 
-# MOve to the portal base dir
+# 4. Move to the portal base dir
 cd ./<project_slug>
 
-# Install dependent libs
+# 5. Install dependent libs
 pip install -r requirements.txt
+
+
 
 # Enable social_django and django_extensions apps
 python manage.py migrate
