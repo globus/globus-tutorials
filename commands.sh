@@ -1,3 +1,6 @@
+# Set the base dir for the Django project
+export PROJECT_SLUG="<YOUR_NAME>"
+
 # 1. Activate the Python environment
 source ~/.portal/bin/activate
 
@@ -5,13 +8,13 @@ source ~/.portal/bin/activate
 cookiecutter https://github.com/globus/cookiecutter-django-globus-app
 
 # 3. Move to the portal base dir
-cd ./<project_slug>
+cd ~/$PROJECT_SLUG
 
 # 4. Install dependent libs
 pip install -r requirements.txt
 
 # 5. Update the Django `settings.py` file and add `django_extensions` app.
-# Edit `~/<project_slug>/<project_slug>/settings/base.py` and add ``django_extensions',` to `INSTALLED_APPS`.
+# Edit `~/$PROJECT_SLUG/$PROJECT_SLUG/settings/base.py` and add ``django_extensions',` to `INSTALLED_APPS`.
 
 # 6. Complete the configuration
 python manage.py migrate
