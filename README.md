@@ -6,5 +6,5 @@ Sample code and commands for deploying and configuring the Globus portal framewo
 
 To customize the portal configuration to use a different search index:
 1. Edit `~/$PROJECT_SLUG/$PROJECT_SLUG/settings/search.py` (make a backup copy first, so you can revert later). Replace the `SEARCH_INDEXES` field with the contents of [search.py](search.py).
-2. Change the search index ID to `0bfd892f-3112-4a3a-81d4-00de69b3fcc9`.
-3. Change `name` and `tempalte_override_dir` to `ladi`
+2. Replace `~/$PROJECT_SLUG/$PROJECT_SLUG/fields.py` with the contents of [fields.py](fields.py).
+3. Replace `~/$PROJECT_SLUG/$PROJECT_SLUG/templates/globus-portal-framework/v2/detail-overview.html` with the contents of [detail-overview.html](detail-overview.html)
