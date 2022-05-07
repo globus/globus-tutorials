@@ -1,4 +1,5 @@
-# Redirect URLs for Globus Auth client registration
+# Register an app with Globus Auth: https://developers.globus.org
+# Use the following redirect URLs and get your client ID and secret
 https://tutN.globusdemo.org:8443/
 https://tutN.globusdemo.org:8443/complete/globus/
 
