@@ -27,6 +27,6 @@ python manage.py collectstatic
 
 # 7. Run the Globus portal!
 python manage.py runserver_plus 0.0.0.0:8443 \
---cert-file /opt/ssl/globusdemo.org.cert \
+--cert-file /opt/ssl/globusdemo.org.crt \
 --key-file /opt/ssl/globusdemo.org.key \
 --keep-meta-shutdown
