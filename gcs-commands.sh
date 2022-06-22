@@ -65,3 +65,7 @@ globus-connect-server storage-gateway create s3 \
 # Create a mapped collection to access AWS S3 buckets
 globus-connect-server collection create STORAGE_GATEWAY_ID / 'My S3 Collection'
 
+# Deleting the endpoint requires multiple steps
+# Run the follwoing two commands in the order shown
+globus-connect-server node cleanup
+globus-connect-server endpoint cleanup --client-id $CLIENT_ID --deployment-key deployment-key.json
