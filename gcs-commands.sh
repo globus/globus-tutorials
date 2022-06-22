@@ -45,3 +45,9 @@ globus-connect-server storage-gateway create posix \
 # Create a mapped collection to access data via the restricted storage gateway
 globus-connect-server collection create STORAGE_GATEWAY_ID / "My Mapped Collection – Restricted"
 
+# Make endpoint "managed" ...or ask Globus team to do it
+globus-connect-server endpoint set-subscription-id YOUR_SUBSCRIPTION_ID
+
+# Allow sharing on mapped collection
+globus-connect-server collection update COLLECTION_ID --allow-guest-collections
+
