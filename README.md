@@ -2,7 +2,7 @@
 Sample code and commands for deploying and configuring the Globus portal framework and other bits.
 
 1. Before deploying the portal code register a  Globus Auth client at https://developers.globus.org.
-2. Deploy the portal framework using [the commands here](commands.sh).
+2. Deploy the portal framework using [the commands here](portal-setup-commands.sh).
 
 To customize the portal configuration to use the alternative sample data search index:
 1. Edit `~/$PROJECT_SLUG/$PROJECT_SLUG/settings/search.py` (make a backup copy first, so you can revert later). Replace the `SEARCH_INDEXES` field with the contents of [search.py](search.py).
