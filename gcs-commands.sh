@@ -51,3 +51,6 @@ globus-connect-server endpoint set-subscription-id YOUR_SUBSCRIPTION_ID
 # Allow sharing on mapped collection
 globus-connect-server collection update COLLECTION_ID --allow-guest-collections
 
+# Allow browser-based HTTPS uploads and downloads
+globus-connect-server collection update COLLECTION_ID --enable-https
+
