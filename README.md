@@ -1,7 +1,15 @@
 # Globus Tutorial Sample Code and Command Cheatsheet
-Sample code and commands for deploying and configuring the Globus portal framework and other bits.
 
-1. Before deploying the portal code register a  Globus Auth client at https://developers.globus.org.
+## Globus Connect Server
+Here are links to commands for installing and configuring Globus Connect Server v5.
+
+1. Register a Globus Connect Server at https://developers.globus.org. Before starting the installation, make sure you have the client ID and secret for your registered Globus Connect Server.
+2. Install the endpoint and configure it using [the commands here](gcs-commands.sh).
+
+## Globus Portal
+Here are links to sample code and commands for deploying and customizing the Globus portal framework.
+
+1. Register a Globus Auth client at https://developers.globus.org. Before continuing, make sure you have the client ID and secret for your registered application.
 2. Deploy the portal framework using [the commands here](portal-setup-commands.sh).
 
 To customize the portal configuration to use the alternative sample data search index:
