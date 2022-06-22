@@ -1,7 +1,7 @@
 # Register a Globus Connect Server with Globus Auth: https://developers.globus.org
 # Note the GCS client ID and secret; you will use it in multiple commands below
 
-export CLIENT_ID="c7acf097-9f85-4d3c-b6ad-aebde31f1e59"
+export CLIENT_ID="YOUR_GCS_CLIENT_ID"
 
 # Create the endpoint
 globus-connect-server endpoint setup \
