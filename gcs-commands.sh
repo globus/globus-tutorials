@@ -58,6 +58,21 @@ globus-connect-server collection update COLLECTION_ID --enable-https
 # Note: $USER is not a shell variable; it has special meaning to GCS
 globus-connect-server collection create STORAGE_GATEWAY_UUID / "My Mapped Collection" --default-directory '/data/$USER/'
 
+# Adding nodes (DTNs) to an endpoint
+globus-connect-server node setup $CLIENT_ID --deployment-key ENDPOINT_DEPLOYMENT_KEY
+systemctl restart apache2
+
+# Migrating nodes
+# Save node configuration on existing DTN to a file
+globus-connect-server node setup $CLIENT_ID \
+--deployment-key ENDPOINT_DEPLOYMENT_KEY \
+--export-node NODE_CONFIG_FILENAME
+
+# Restore node configuration from file on new DTN
+globus-connect-server node setup $CLIENT_ID \
+--deployment-key ENDPOINT_DEPLOYMENT_KEY \
+--import-node NODE_CONFIG_FILENAME
+
 # Creating a storage gateway to access AWS S3 buckets
 globus-connect-server storage-gateway create s3 \
 'My S3 Storage Gateway' \
