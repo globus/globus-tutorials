@@ -54,6 +54,10 @@ globus-connect-server collection update COLLECTION_ID --allow-guest-collections
 # Allow browser-based HTTPS uploads and downloads
 globus-connect-server collection update COLLECTION_ID --enable-https
 
+# Setting the default directory for a collection
+# Note: $USER is not a shell variable; it has special meaning to GCS
+globus-connect-server collection create STORAGE_GATEWAY_UUID / "My Mapped Collection" --default-directory '/data/$USER/'
+
 # Creating a storage gateway to access AWS S3 buckets
 globus-connect-server storage-gateway create s3 \
 'My S3 Storage Gateway' \
