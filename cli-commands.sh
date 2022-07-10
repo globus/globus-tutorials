@@ -21,7 +21,7 @@ globus transfer --recursive $SRC:/~/carousel $DST:/globusworkshop
 # Get details about a transfer task
 globus task show TRANSFER_TASK__UUID
 
-# Grant a user "READ" permission on the gues collection
+# Grant a user "READ" permission on the guest collection
 globus endpoint permission create --permissions r --identity demodoc@globusid.org $SHARE:/globusworkshop/
 globus endpoint permission list $SHARE
 globus endpoint permission delete $SHARE PERMISSION_UUID
