@@ -4,7 +4,7 @@
 export SOURCE="" 
 
 # Find endpoint using text search
-globus endpoint search 'Tutorial Endpoint 1'
+globus endpoint search 'PEARC22 Tutorial'
 
 # List my tasks
 globus task list
