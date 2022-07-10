@@ -34,7 +34,7 @@ cd ~/simple_sync
 
 # Edit simple_sync_publish.py
 flow_id = 'YOUR_GLOBUS_FLOW_ID_FROM_NOTEBOOK'   # on line 19
-source_id = YOUR_GCP_ENDPOINT_ID   # on line 24
+source_id = 'YOUR_GCP_ENDPOINT_ID'   # on line 24
 remote_path = '/flows/YOUR_NAME/'   # on line 30
 search_index = 'YOUR_GLOBUS_SEARCH_INDEX_ID_FROM_NOTEBOOK'   # on line 38
 
