@@ -16,15 +16,15 @@ globus get-identities bfc122a3-af43-43e1-8a41-d36f28a2bc0a
 # Create the endpoint
 export SRC=584ccac3-5124-4c0d-85c9-62848d503f70   # PEARC22 Tutorial Guest Collection
 export DST=234360bb-0085-486c-85eb-2636eb169c23   # PEARC22 Tutorial on S3
-globus transfer --recursive $SRC:/cli/carousel $DST:/images
+globus transfer --recursive $SRC:/cli/carousel $DST:/images/YOUR_NAME
 
 # Get details about a transfer task
 globus task show TRANSFER_TASK__UUID
 
 # Grant a user "READ" permission on the guest collection
-globus endpoint permission create --permissions r --identity demodoc@globusid.org $SHARE:/globusworkshop/
-globus endpoint permission list $SHARE
-globus endpoint permission delete $SHARE PERMISSION_UUID
+globus endpoint permission create --permissions r --identity demodoc@globusid.org $DST:/images/YOUR_NAME/
+globus endpoint permission list $DST
+globus endpoint permission delete $DST PERMISSION_UUID
 
 # Search using filters
 globus endpoint search --filter-scope my-endpoints
