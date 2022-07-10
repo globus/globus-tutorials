@@ -42,3 +42,5 @@ search_index = 'YOUR_GLOBUS_SEARCH_INDEX_ID_FROM_NOTEBOOK'   # on line 38
 # Run the script to ingest search metadata
 cd ~/simple_sync
 ./simple_sync_publish.py --localdir `pwd`/testData --include .done
+
+### EOF
