@@ -4,7 +4,7 @@ https://tutN.globusdemo.org:8443/
 https://tutN.globusdemo.org:8443/complete/globus/
 
 # Set the base dir for the Django project
-export PROJECT_SLUG="<YOUR_PORTAL_SHORT_NAME>"
+export PROJECT_SLUG="YOUR_PORTAL_SHORT_NAME"
 
 # 1. Activate the Python environment
 source ~/.portal/bin/activate
