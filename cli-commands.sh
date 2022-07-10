@@ -14,9 +14,9 @@ globus get-identities YOUR_IDENTITY_NAME
 globus get-identities bfc122a3-af43-43e1-8a41-d36f28a2bc0a
 
 # Create the endpoint
-export SRC=SOURCE_COLLECTION_ID
-export DST=DESTINATION_COLLECTION_ID
-globus transfer --recursive $SRC:/~/carousel $DST:/globusworkshop
+export SRC=584ccac3-5124-4c0d-85c9-62848d503f70   # PEARC22 Tutorial Guest Collection
+export DST=234360bb-0085-486c-85eb-2636eb169c23   # PEARC22 Tutorial on S3
+globus transfer --recursive $SRC:/cli/carousel $DST:/images
 
 # Get details about a transfer task
 globus task show TRANSFER_TASK__UUID
