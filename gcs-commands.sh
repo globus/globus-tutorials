@@ -88,3 +88,5 @@ globus-connect-server collection create STORAGE_GATEWAY_ID / 'My S3 Collection'
 # Run the follwoing two commands in the order shown
 globus-connect-server node cleanup
 globus-connect-server endpoint cleanup --client-id $CLIENT_ID --deployment-key deployment-key.json
+
+### EOF
