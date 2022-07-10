@@ -33,10 +33,9 @@ cd ~/simple_sync
 ./simple_sync.py --localdir `pwd`/testData --include .done
 
 # Edit simple_sync_publish.py
-flow_id = YOUR_GLBOUS_FLOW_ID_FROM_NOTEBOOK   # on line 19
+flow_id = YOUR_GLOBUS_FLOW_ID_FROM_NOTEBOOK   # on line 19
 source_id = YOUR_GCP_ENDPOINT_ID   # on line 24
-flow_path = 
+remote_path = '/flows/YOUR_NAME/'   # on line 30
 
-# Modify
-
+# Run the script to ingest search metadata
 ./simple_sync_publish.py
