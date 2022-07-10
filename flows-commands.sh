@@ -18,7 +18,7 @@ globus login   # optional
 globus endpoint search 'PEARC22'
 
 # Edit simple_script.py; modify "source_id" and "remote_path"
-# When triggered, the Globus Flow will move file to this collection/path
+# When triggered, this Globus Flow will move file to this collection/path
 cd ~/simple_sync
 vi ~/simple_sync/simple_sync.py
 
@@ -33,7 +33,7 @@ cd ~/simple_sync
 ./simple_sync.py --localdir `pwd`/testData --include .done
 
 # Edit simple_sync_publish.py; modify "flow_id", "source_id", "remote_path" and "search_index"
-# When triggered, the Globus Flow will push file metadata to the index we created earlier 
+# When triggered, this Globus Flow will push file metadata to the index we created earlier 
 flow_id = 'YOUR_GLOBUS_FLOW_ID_FROM_NOTEBOOK'   # on line 19
 source_id = 'YOUR_GCP_ENDPOINT_ID'   # on line 24
 remote_path = '/flows/YOUR_NAME/'   # on line 30
