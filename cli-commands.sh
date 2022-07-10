@@ -34,3 +34,5 @@ globus endpoint search --filter-scope my-endpoints --format json
 
 # Parse endpoint results using a JMESPath query
 globus endpoint search --filter-scope recently-used --jmespath 'DATA[].[id, display_name]'
+
+### EOF
