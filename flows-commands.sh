@@ -30,7 +30,7 @@ source ~/.trigger/bin/activate
 
 # Run the trigger script
 cd ~/simple_sync
-./simple_sync.py -localdir testData -include .done
+./simple_sync.py --localdir testData --include .done
 
 # Edit simple_sync_publish.py
 flow_id = YOUR_GLBOUS_FLOW_ID_FROM_NOTEBOOK   # on line 19
