@@ -3,14 +3,13 @@
 https://tutN.globusdemo.org:8443/
 https://tutN.globusdemo.org:8443/complete/globus/
 
-# Set the base dir for the Django project
-export PROJECT_SLUG="YOUR_PORTAL_SHORT_NAME"
-
 # 1. Activate the Python environment
 source ~/.portal/bin/activate
 
 # 2. Point cookiecutter to the Globus portal repository
 cookiecutter https://github.com/globus/cookiecutter-django-globus-app
+
+export PROJECT_SLUG="YOUR_PORTAL_SHORT_NAME"
 
 # 3. Move to the portal base dir
 cd ~/$PROJECT_SLUG
