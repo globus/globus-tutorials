@@ -6,6 +6,9 @@ Here are links to commands for installing and configuring Globus Connect Server 
 1. Register a Globus Connect Server at https://developers.globus.org. Before starting the installation, make sure you have the client ID and secret for your registered Globus Connect Server.
 2. Install the endpoint and configure it using [the commands here](gcs-commands.sh).
 
+## Globus CLI
+The Globus CLI is already installed on your instance and can be accessed via the `devN` local account. You will need to run `globus login`; then run [the commands here](cli-commands.sh) to transfer and share files.
+
 ## Globus Portal
 Here are links to sample code and commands for deploying and customizing the Globus portal framework.
 
