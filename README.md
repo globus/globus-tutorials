@@ -10,7 +10,7 @@ Here are links to commands for installing and configuring Globus Connect Server 
 The Globus CLI is already installed on your instance and can be accessed via the `devN` local account. You will need to run `globus login`; then run [the commands here](cli-commands.sh) to transfer and share files.
 
 ## Triggering Globus Flows
-You will need to configure and run a simple script that monitors the filesystem and triggers a Flow run. See [the commands here](cli-commands.sh).
+You will need to configure and run a simple script that monitors the filesystem and triggers a Flow run. See [the commands here](flows-commands.sh).
 
 ## Globus Portal
 Here are links to sample code and commands for deploying and customizing the Globus portal framework.
