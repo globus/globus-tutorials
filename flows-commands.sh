@@ -37,7 +37,7 @@ cd ~/globus-flows-trigger-examples
 # For Flow 2: Transfer and Publish ---- 
 # Edit trigger_transfer_publish_flow.py; modify "flow_id", "source_id", "destination_base_path" and "search_index"
 cd ~/globus-flows-trigger-examples
-vi ~/globus-flows-trigger-examples/trigger_transfer_share_flow.py
+vi ~/globus-flows-trigger-examples/trigger_transfer_publish_flow.py
 
 flow_id = 'YOUR_FLOW_ID_FROM_NOTEBOOK'  # on line 16
 source_id = 'YOUR_GCP_ENDPOINT_ID'  # on line 21
