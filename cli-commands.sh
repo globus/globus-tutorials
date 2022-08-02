@@ -2,7 +2,7 @@
 # Note: Commands require UUIDs to identify resources (collections, users, etc.)
 
 # Find endpoint using text search
-globus endpoint search 'RMACC22 Tutorial'
+globus endpoint search RMACC22
 
 # List my tasks
 globus task list
