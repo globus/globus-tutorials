@@ -35,13 +35,13 @@ cd ~/globus-flows-trigger-examples
 
 # Edit trigger_transfer_publish_flow.py; modify "flow_id", "source_id", "remote_path" and "search_index"
 # When triggered, this Globus Flow will push file metadata to the index we created earlier 
-flow_id = 'YOUR_GLOBUS_FLOW_ID_FROM_NOTEBOOK'   # on line 19
-source_id = 'YOUR_GCP_ENDPOINT_ID'   # on line 24
-remote_path = '/flows/YOUR_NAME/'   # on line 30
-search_index = 'YOUR_GLOBUS_SEARCH_INDEX_ID_FROM_NOTEBOOK'   # on line 38
+flow_id = 'YOUR_FLOW_ID_FROM_NOTEBOOK'  # on line 16
+source_id = 'YOUR_GCP_ENDPOINT_ID'  # on line 21
+destination_base_path = '/automation-tutorial/YOUR_NAME/'  # on line 30
+search_index = 'YOUR_GLOBUS_SEARCH_INDEX_ID_FROM_NOTEBOOK'   # on line 37
 
 # Run the script to ingest search metadata
-cd ~/simple_sync
-./simple_sync_publish.py --localdir `pwd`/testData --include .done
+cd ~/globus-flows-trigger-examples
+./trigger_transfer_publish_flow.py --watchdir `pwd`/testData --patterns .done
 
 ### EOF
