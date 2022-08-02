@@ -21,7 +21,7 @@ globus transfer --recursive $SRC:/carousel $DST:/cli/images/YOUR_NAME
 # Get details about the transfer task
 globus task show TRANSFER_TASK__UUID
 
-# Grant a user "READ" permission on the guest collection
+# Grant a user "READ" permission on the guest collection; path must end with a trailing slash
 globus endpoint permission create --permissions r --identity demodoc@globusid.org $DST:/cli/images/YOUR_NAME/
 globus endpoint permission list $DST
 globus endpoint permission delete $DST PERMISSION_UUID
