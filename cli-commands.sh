@@ -1,7 +1,5 @@
 # Perform common tasks using the Globus Command Line Interface (CLI)
-# Note: Commands typically require UUIDs to identify resources (collections, users, etc.)
-
-export SOURCE="" 
+# Note: Commands require UUIDs to identify resources (collections, users, etc.)
 
 # Find endpoint using text search
 globus endpoint search 'RMACC22 Tutorial'
