@@ -15,7 +15,7 @@ cd globusconnectpersonal-3.1.6
 
 # Get the ID of the GCP endpoint on your instance
 globus login   # optional
-globus endpoint search 'PEARC22'
+globus endpoint search 'ALCF'
 
 # Edit simple_script.py; modify "source_id" and "remote_path"
 # When triggered, this Globus Flow will move file to this collection/path
