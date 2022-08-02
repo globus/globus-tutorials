@@ -1,8 +1,11 @@
 # Perform common tasks using the Globus Command Line Interface (CLI)
 # Note: Commands require UUIDs to identify resources (collections, users, etc.)
 
-# Find endpoint using text search
+# Find endpoint(s) using text search
 globus endpoint search RMACC22
+
+# Search using filters
+globus endpoint search --filter-scope administered-by-me
 
 # List my tasks
 globus task list
@@ -23,9 +26,6 @@ globus task show TRANSFER_TASK__UUID
 globus endpoint permission create --permissions r --identity demodoc@globusid.org $DST:/cli/images/YOUR_NAME/
 globus endpoint permission list $DST
 globus endpoint permission delete $DST PERMISSION_UUID
-
-# Search using filters
-globus endpoint search --filter-scope my-endpoints
 
 # Set command output to JSON
 globus endpoint search --filter-scope my-endpoints --format json
