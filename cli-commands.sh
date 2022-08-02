@@ -9,7 +9,7 @@ globus task list
 
 # Find identity ID (and/or identity name)
 globus get-identities YOUR_IDENTITY_NAME
-globus get-identities bfc122a3-af43-43e1-8a41-d36f28a2bc0a
+globus get-identities a52dd84e-d274-11e5-9b46-e71051162fd5
 
 # Transfer data to a guest collection for sharing
 export SRC=937e7d0e-bb6f-4ac6-ab65-db41f2030e93   # RMACC22 Images on S3
