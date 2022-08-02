@@ -6,7 +6,7 @@ ssh devN@tutN.globusdemo.org
 # Install GCP
 cd globusconnectpersonal-3.1.6
 ./globusconnectpersonal
-# Name your GCP endpoint: PEARC22 GCP YOUR_NAME
+# Name your GCP endpoint: RMACC22 GCP YOUR_NAME
 
 # Start GCP
 ./globusconnectpersonal -start &
@@ -15,24 +15,25 @@ cd globusconnectpersonal-3.1.6
 
 # Get the ID of the GCP endpoint on your instance
 globus login   # optional
-globus endpoint search 'ALCF'
+globus endpoint search 'RMACC22'
 
 # Edit simple_script.py; modify "source_id" and "remote_path"
 # When triggered, this Globus Flow will move file to this collection/path
-cd ~/simple_sync
-vi ~/simple_sync/simple_sync.py
+cd ~/globus-flows-trigger-examples
+vi ~/globus-flows-trigger-examples/trigger_transfer_share_flow.py
 
-source_id = 'YOUR_GCP_ENDPOINT_ID'  # on line 21
-remote_path = '/flows/YOUR_NAME/'   # on line 27
+flow_id = 'YOUR_FLOW_ID_FROM_NOTEBOOK'  # on line 14
+source_id = 'YOUR_GCP_ENDPOINT_ID'  # on line 19
+destination_base_path = '/automation-tutorial/YOUR_NAME/'  # on line 28
 
 # Activate Python virtual environment
 source ~/.trigger/bin/activate
 
 # Run the trigger script
-cd ~/simple_sync
-./simple_sync.py --localdir `pwd`/testData --include .done
+cd ~/globus-flows-trigger-examples
+./trigger_transfer_share_flow.py --watchdir `pwd`/testData --patterns .done
 
-# Edit simple_sync_publish.py; modify "flow_id", "source_id", "remote_path" and "search_index"
+# Edit trigger_transfer_publish_flow.py; modify "flow_id", "source_id", "remote_path" and "search_index"
 # When triggered, this Globus Flow will push file metadata to the index we created earlier 
 flow_id = 'YOUR_GLOBUS_FLOW_ID_FROM_NOTEBOOK'   # on line 19
 source_id = 'YOUR_GCP_ENDPOINT_ID'   # on line 24
