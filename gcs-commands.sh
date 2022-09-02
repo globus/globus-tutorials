@@ -5,7 +5,7 @@ export CLIENT_ID="YOUR_GCS_CLIENT_ID"
 
 # Create the endpoint
 globus-connect-server endpoint setup \
-'My Endpoint' \
+'My Tutorial GCS Endpoint' \
 --organization YOUR_ORGANIZATION_NAME \
 --client-id $CLIENT_ID \
 --contact-email YOUR_EMAIL_ADDRESS \
@@ -25,27 +25,27 @@ globus-connect-server endpoint show
 
 # Create a storage gateway to access a POSIX-compliant system
 globus-connect-server storage-gateway create posix \
-'My Storage Gateway' \
+'My Tutorial Storage Gateway' \
 --domain globusid.org \
 --authentication-timeout-mins 90
 
 # Create a mapped collection on the storage gateway
-globus-connect-server collection create STORAGE_GATEWAY_ID / 'My Mapped Collection'
+globus-connect-server collection create STORAGE_GATEWAY_ID / 'My Tutorial Mapped Collection'
 
-# Create local user account (use the same name as your Globus identity)
+# Create local user account (--> use the same name as your Globus identity <--)
 adduser --disabled-password --gecos 'LOCAL_ACCOUNT_NAME' LOCAL_ACCOUNT_NAME
 
 # Create a storage gateway with path restrictions
 globus-connect-server storage-gateway create posix \
-"My Storage Gateway - Restricted" \
+"My Tutorial Storage Gateway - Restricted" \
 --domain globusid.org \
 --authentication-timeout-mins 90 \
 --restrict-paths file:/home/adminN/paths.json
 
 # Create a mapped collection to access data via the restricted storage gateway
-globus-connect-server collection create STORAGE_GATEWAY_ID / "My Mapped Collection – Restricted"
+globus-connect-server collection create STORAGE_GATEWAY_ID / "My Tutorial Mapped Collection – Restricted"
 
-# Make endpoint "managed" ...or ask Globus team to do it
+# Make endpoint "managed" ...or ask the Globus team to do it
 globus-connect-server endpoint set-subscription-id YOUR_SUBSCRIPTION_ID
 
 # Allow sharing on mapped collection
@@ -56,7 +56,7 @@ globus-connect-server collection update COLLECTION_ID --enable-https
 
 # Setting the default directory for a collection
 # Note: $USER is not a shell variable; it has special meaning to GCS
-globus-connect-server collection create STORAGE_GATEWAY_UUID / "My Mapped Collection" --default-directory '/data/$USER/'
+globus-connect-server collection update COLLECTION_ID --default-directory '/home/$USER/'
 
 # Adding nodes (DTNs) to an endpoint
 globus-connect-server node setup $CLIENT_ID --deployment-key ENDPOINT_DEPLOYMENT_KEY
@@ -75,14 +75,14 @@ globus-connect-server node setup $CLIENT_ID \
 
 # Creating a storage gateway to access AWS S3 buckets
 globus-connect-server storage-gateway create s3 \
-'My S3 Storage Gateway' \
+'My Tutorial S3 Storage Gateway' \
 --domain 'uchicago.edu' \
 --s3-endpoint https://s3.amazonaws.com \
 --bucket MY_BUCKET \
 --s3-user-credential
 
 # Create a mapped collection to access AWS S3 buckets
-globus-connect-server collection create STORAGE_GATEWAY_ID / 'My S3 Collection'
+globus-connect-server collection create STORAGE_GATEWAY_ID / 'My Tutorial S3 Collection'
 
 # Deleting the endpoint requires multiple steps
 # Run the follwoing two commands in the order shown
