@@ -65,7 +65,7 @@ globus-connect-server collection update COLLECTION_ID --default-directory '/home
 
 # ------- Installing multi-DTN endpoints -------
 # Adding nodes (DTNs) to an endpoint
-globus-connect-server node setup $CLIENT_ID --deployment-key DEPLOYMENT_KEY_FILENAME
+globus-connect-server node setup --client-id $CLIENT_ID --deployment-key DEPLOYMENT_KEY_FILENAME
 systemctl restart apache2
 
 
