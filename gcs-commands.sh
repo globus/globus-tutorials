@@ -1,7 +1,7 @@
 # Register a Globus Connect Server with Globus Auth: https://developers.globus.org
 # Note the GCS client ID and secret; you will use it in multiple commands below
 
-export CLIENT_ID="YOUR_GCS_CLIENT_ID"
+export CLIENT_ID=YOUR_GCS_CLIENT_ID
 
 # Create the endpoint
 globus-connect-server endpoint setup \
@@ -58,8 +58,9 @@ globus-connect-server collection update COLLECTION_ID --enable-https
 # Note: $USER is not a shell variable; it has special meaning to GCS
 globus-connect-server collection update COLLECTION_ID --default-directory '/home/$USER/'
 
+# Working with multi-DTN endpoints
 # Adding nodes (DTNs) to an endpoint
-globus-connect-server node setup $CLIENT_ID --deployment-key ENDPOINT_DEPLOYMENT_KEY
+globus-connect-server node setup $CLIENT_ID --deployment-key DEPLOYMENT_KEY_FILENAME
 systemctl restart apache2
 
 # Migrating nodes
@@ -70,8 +71,24 @@ globus-connect-server node setup $CLIENT_ID \
 
 # Restore node configuration from file on new DTN
 globus-connect-server node setup $CLIENT_ID \
---deployment-key ENDPOINT_DEPLOYMENT_KEY \
+--deployment-key DEPLOYMENT_KEY_FILENAME \
 --import-node NODE_CONFIG_FILENAME
+
+# Troubleshooting GCS installation
+# Show GCS configuration details and check status of the various GCS services
+globus-connect-server self-diagnostic
+
+# Check GCS Manager connectivity
+export GCS_DNS=YOUR_GCS_DNS_NAME
+
+# Check DNS resolution of GCS Manager
+dig +short GCS_DNS
+
+# Confirm that it resolves to your DTN(s) IP address(es)
+globus-connect-server node list
+
+# Ensure no "timeout" or "no route to host" errors for each DTN
+curl -vk --resolve GCS_DNS:443:DTN_IP_ADDRESS https://GCS_DNS/api/info
 
 # Creating a storage gateway to access AWS S3 buckets
 globus-connect-server storage-gateway create s3 \
@@ -85,8 +102,8 @@ globus-connect-server storage-gateway create s3 \
 globus-connect-server collection create STORAGE_GATEWAY_ID / 'My Tutorial S3 Collection'
 
 # Deleting the endpoint requires multiple steps
-# Run the follwoing two commands in the order shown
+# Run the following two commands in the order shown
 globus-connect-server node cleanup
-globus-connect-server endpoint cleanup --client-id $CLIENT_ID --deployment-key deployment-key.json
+globus-connect-server endpoint cleanup --client-id $CLIENT_ID --deployment-key DEPLOYMENT_KEY_FILENAME
 
 ### EOF
