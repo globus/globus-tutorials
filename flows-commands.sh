@@ -4,7 +4,7 @@
 ssh devN@tutN.globusdemo.org
 
 # Install GCP
-cd globusconnectpersonal-3.1.6
+cd globusconnectpersonal-3.2.0
 ./globusconnectpersonal
 # Name your GCP endpoint: EVENT_NAME_YOUR_NAME
 
