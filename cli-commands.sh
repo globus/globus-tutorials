@@ -22,7 +22,7 @@ export DST=a6f165fa-aee2-4fe5-95f3-97429c28bf82   # Globus Tutorials on ALCF Eag
 export SRC=YOUR_GCP_ENDPOINT_ID
 export DST=7510e024-7547-43de-8437-8ae89ad1b2a0   # Tutorial Guest Collection on S3
 
-globus transfer --recursive $SRC:/carousel $DST:/cli/images/YOUR_NAME
+globus transfer --recursive $SRC:/home/devN/test-data $DST:/cli/images/YOUR_NAME
 
 # Get details about the transfer task
 globus task show TRANSFER_TASK_UUID
