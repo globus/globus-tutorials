@@ -17,6 +17,11 @@ globus get-identities a52dd84e-d274-11e5-9b46-e71051162fd5
 # Transfer data to a guest collection for sharing
 export SRC=937e7d0e-bb6f-4ac6-ab65-db41f2030e93   # Tutorial Guest Collection on S3
 export DST=a6f165fa-aee2-4fe5-95f3-97429c28bf82   # Globus Tutorials on ALCF Eagle
+
+# Alternative collections (using EC2 GCP endpoint and/or when Eagle is down)
+export SRC=YOUR_GCP_ENDPOINT_ID
+export DST=fe2feb64-4ac0-4a40-ba90-94b99d06dd2c   # Tutorial Guest Collection
+
 globus transfer --recursive $SRC:/carousel $DST:/cli/images/YOUR_NAME
 
 # Get details about the transfer task
