@@ -20,7 +20,7 @@ export DST=a6f165fa-aee2-4fe5-95f3-97429c28bf82   # Globus Tutorials on ALCF Eag
 
 # Alternative collections (using EC2 GCP endpoint and/or when Eagle is down)
 export SRC=YOUR_GCP_ENDPOINT_ID
-export DST=fe2feb64-4ac0-4a40-ba90-94b99d06dd2c   # Tutorial Guest Collection
+export DST=7510e024-7547-43de-8437-8ae89ad1b2a0   # Tutorial Guest Collection on S3
 
 globus transfer --recursive $SRC:/carousel $DST:/cli/images/YOUR_NAME
 
