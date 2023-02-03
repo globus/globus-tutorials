@@ -7,7 +7,8 @@ https://tutN.globusdemo.org:8443/complete/globus/
 source ~/.portal/bin/activate
 
 # 2. Point cookiecutter to the Globus portal repository
-cookiecutter https://github.com/globus/cookiecutter-django-globus-app
+# cookiecutter https://github.com/globus/cookiecutter-django-globus-app
+cookiecutter https://github.com/vasv/django-globus-app-tutorial.git
 
 export PROJECT_SLUG="YOUR_PORTAL_SHORT_NAME"
 
