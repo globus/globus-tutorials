@@ -61,6 +61,6 @@ search_index = 'YOUR_GLOBUS_SEARCH_INDEX_ID_FROM_NOTEBOOK'   # on line 41
 # When a file ending in .done is created, it will trigger the Globus Flow
 # The flow will transfer/share data and push metadata to the index we created earlier
 cd ~/globus-flows-trigger-examples
-./trigger_transfer_publish_flow.py --watchdir `pwd`/testData --patterns .done
+./trigger_transfer_publish_flow.py --watchdir ~/images --patterns .done
 
 ### EOF
