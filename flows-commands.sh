@@ -39,7 +39,7 @@ source ~/.trigger/bin/activate
 # When a file ending in .done is created, it will trigger the Globus Flow
 # The flow will move files to the guest collection/path and add sharing permissions
 cd ~/globus-flows-trigger-examples
-./trigger_transfer_share_flow.py --watchdir `pwd`/testData --patterns .done
+./trigger_transfer_share_flow.py --watchdir ~/test-data --patterns .done
 
 # For Flow 2: Transfer and Publish ----
 cd ~/globus-flows-trigger-examples
