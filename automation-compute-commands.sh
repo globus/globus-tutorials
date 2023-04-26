@@ -4,7 +4,7 @@
 id: fe2feb64-4ac0-4a40-ba90-94b99d06dd2c
 working_dir: /automation-tutorial/
 
-# Globus Tutorials on ALCF Eagle
+# Globus Tutorials on ALCF Eagle (also a guest collection)
 id: a6f165fa-aee2-4fe5-95f3-97429c28bf82
 working_dir: /automation-tutorial/
 
