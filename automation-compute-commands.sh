@@ -28,8 +28,8 @@ source ~/.compute/bin/activate
 
 ### Create and start the Globus Compute endpoint
 
-globus-compute-endpoint configure
-globus-compute-endpoint start default
+globus-compute-endpoint configure EP_NAME
+globus-compute-endpoint start EP_NAME
 
 # Register a Python function with the Globus Compute service
 python ~/globus-flows-trigger-examples/compute_function.py
