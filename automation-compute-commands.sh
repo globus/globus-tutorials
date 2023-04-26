@@ -52,6 +52,7 @@ vi ~/globus-flows-trigger-examples/trigger_transfer_compute_share_flow.py
 flow_id = 'REPLACE_WITH_FLOW_ID'  # on line 14
 source_id = 'REPLACE_WITH_SOURCE_COLLECTION_ID'  # on line 23
 destination_id = 'REPLACE_WITH_DESTINATION_COLLECTION_ID'  # on line 27
+destination_base_path = '/home/devN/scratch/'  # on line 31
 compute_endpoint_id = 'REPLACE_WITH_COMPUTE_ENDPOINT_ID'  # on line 34
 compute_function_id = 'REPLACE_WITH_REGISTERED_FUNCTION_ID'  # on line 37
 resultshare_path = '/automation-tutorial/compute-results/USERNAME/'  # on line 46
