@@ -1,3 +1,13 @@
+# Collection IDs
+
+# Tutorial Guest Collection
+id: fe2feb64-4ac0-4a40-ba90-94b99d06dd2c
+working_dir: /automation-tutorial/
+
+# Globus Tutorials on ALCF Eagle
+id: a6f165fa-aee2-4fe5-95f3-97429c28bf82
+working_dir: /automation-tutorial/
+
 # Set up Globus Connect Personal on your EC2 instance
 
 # Shell into instance using the devN local account
