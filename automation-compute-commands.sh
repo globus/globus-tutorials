@@ -33,6 +33,9 @@ func_id = 'REGISTERED_FUNCTION_UUID'
 ep_id = 'GLOBUS_COMPUTE_ENDPOINT_ID'
 result = client.run('/home/devN/test-data', '/home/devN/scratch', endpoint_id=ep_id, function_id=func_id)
 
+# Retrieve compute result (should be 'None' if no error)
+print (client.get_result(result))
+
 ### Trigger a flow by filesystem events
 
 # Activate Python virtual environment
