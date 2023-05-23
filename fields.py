@@ -1,5 +1,3 @@
-<!-- Overrides ~/$PROJECT_SLUG/$PROJECT_SLUG/fields.py -->
-
 from urllib.parse import urlsplit, urlunsplit, urlencode
 
 def title(result):
@@ -7,8 +5,11 @@ def title(result):
 
 def https_url(result):
     path = urlsplit(result[0]['files'][0]['url']).path
-    return urlunsplit(('https', 'g-fe1c1.fd635.8443.data.globus.org', path,
-                       '', ''))
+    return urlunsplit(('https', 'g-fe1c1.fd635.8443.data.globus.org', path, '', ''))
+
+def preview_url(result):
+    path = urlsplit(result[0]['files'][0]['preview_url']).path
+    return urlunsplit(('https', 'g-fe1c1.fd635.8443.data.globus.org', path, '', ''))
 
 def detail_general_metadata(result):
     fields = [
