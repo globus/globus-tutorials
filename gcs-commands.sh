@@ -64,7 +64,7 @@ globus-connect-server collection update COLLECTION_ID --default-directory '/home
 
 # ------- Installing multi-DTN endpoints -------
 # Adding nodes (DTNs) to an endpoint
-globus-connect-server node setup --client-id $CLIENT_ID --deployment-key DEPLOYMENT_KEY_FILENAME
+globus-connect-server node setup --deployment-key DEPLOYMENT_KEY_FILENAME
 systemctl restart apache2
 
 
@@ -87,12 +87,12 @@ curl -vk --resolve $GCS_DNS:443:DTN_IP_ADDRESS https://$GCS_DNS/api/info
 
 # ------- Migrating nodes -------
 # Save node configuration on existing DTN to a file
-globus-connect-server node setup $CLIENT_ID \
+globus-connect-server node setup \
 --deployment-key ENDPOINT_DEPLOYMENT_KEY \
 --export-node NODE_CONFIG_FILENAME
 
 # Restore node configuration from file on new DTN
-globus-connect-server node setup $CLIENT_ID \
+globus-connect-server node setup \
 --deployment-key DEPLOYMENT_KEY_FILENAME \
 --import-node NODE_CONFIG_FILENAME
 
@@ -114,6 +114,6 @@ globus-connect-server collection create STORAGE_GATEWAY_ID / 'My Tutorial S3 Col
 # Deleting the endpoint requires multiple steps
 # Run the following two commands in the order shown
 globus-connect-server node cleanup
-globus-connect-server endpoint cleanup --client-id $CLIENT_ID --deployment-key DEPLOYMENT_KEY_FILENAME
+globus-connect-server endpoint cleanup --deployment-key DEPLOYMENT_KEY_FILENAME
 
 ### EOF
