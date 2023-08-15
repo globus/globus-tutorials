@@ -96,8 +96,9 @@ globus-connect-server node setup \
 --deployment-key DEPLOYMENT_KEY_FILENAME \
 --import-node NODE_CONFIG_FILENAME
 
+
 # ------- Customizing identity mapping -------
-# Create a file with identity mapping rules (id-rules.conf)
+# Create a file with identity mapping rules (id-rules.json)
 {
   "DATA_TYPE": "expression_identity_mapping#1.0.0",
   "mappings": [
