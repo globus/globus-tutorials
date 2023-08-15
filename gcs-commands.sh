@@ -77,18 +77,18 @@ MAPPED_COLLECTION_ID \
 
 # ------- Installing multi-DTN endpoints -------
 # Adding nodes (DTNs) to an endpoint
-globus-connect-server node setup --deployment-key DEPLOYMENT_KEY_FILENAME
-systemctl restart apache2
+sudo globus-connect-server node setup --deployment-key DEPLOYMENT_KEY_FILENAME
+sudo systemctl restart apache2
 
   
 # ------- Migrating nodes -------
 # Save node configuration on existing DTN to a file
-globus-connect-server node setup \
+sudo globus-connect-server node setup \
 --deployment-key ENDPOINT_DEPLOYMENT_KEY \
 --export-node NODE_CONFIG_FILENAME
 
 # Restore node configuration from file on new DTN
-globus-connect-server node setup \
+sudo globus-connect-server node setup \
 --deployment-key DEPLOYMENT_KEY_FILENAME \
 --import-node NODE_CONFIG_FILENAME
 
@@ -149,7 +149,7 @@ globus-connect-server collection create STORAGE_GATEWAY_ID / 'My Tutorial S3 Col
 # ------- Cleaning up! -------
 # Deleting the endpoint requires multiple steps
 # Run the following two commands in the order shown
-globus-connect-server node cleanup
+sudo globus-connect-server node cleanup
 globus-connect-server endpoint cleanup --deployment-key DEPLOYMENT_KEY_FILENAME
 
 
@@ -157,4 +157,3 @@ globus-connect-server endpoint cleanup --deployment-key DEPLOYMENT_KEY_FILENAME
 # Sample code: gist.github.com/vasv/cdb8607e2bfab08634b5aa99389e87c7
 
 ### EOF
-
