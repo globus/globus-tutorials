@@ -62,10 +62,35 @@ globus-connect-server collection update COLLECTION_ID --enable-https
 globus-connect-server collection update COLLECTION_ID --default-directory '/home/$USER/'
 
 
+# ------- Restrict sharing to users from a specific domain -------
+# Step 1: Create the sharing authentication policy
+globus-connect-server auth-policy create \
+--include uchicago.edu \
+--description "Only share with users that present a uchicago.edu credential" \
+--display-name "Restricted uchicago.edu sharing policy"
+
+# Step 2: Attach the policy to the mapped collection
+globus-connect-server collection update \
+MAPPED_COLLECTION_ID \
+--guest-auth-policy-id AUTH_POLICY_UUID 
+
+
 # ------- Installing multi-DTN endpoints -------
 # Adding nodes (DTNs) to an endpoint
 globus-connect-server node setup --deployment-key DEPLOYMENT_KEY_FILENAME
 systemctl restart apache2
+
+  
+# ------- Migrating nodes -------
+# Save node configuration on existing DTN to a file
+globus-connect-server node setup \
+--deployment-key ENDPOINT_DEPLOYMENT_KEY \
+--export-node NODE_CONFIG_FILENAME
+
+# Restore node configuration from file on new DTN
+globus-connect-server node setup \
+--deployment-key DEPLOYMENT_KEY_FILENAME \
+--import-node NODE_CONFIG_FILENAME
 
 
 # ------- Troubleshooting GCS installation -------
@@ -83,18 +108,6 @@ globus-connect-server node list
 
 # Ensure no "timeout" or "no route to host" errors for each DTN
 curl -vk --resolve $GCS_DNS:443:DTN_IP_ADDRESS https://$GCS_DNS/api/info
-
-
-# ------- Migrating nodes -------
-# Save node configuration on existing DTN to a file
-globus-connect-server node setup \
---deployment-key ENDPOINT_DEPLOYMENT_KEY \
---export-node NODE_CONFIG_FILENAME
-
-# Restore node configuration from file on new DTN
-globus-connect-server node setup \
---deployment-key DEPLOYMENT_KEY_FILENAME \
---import-node NODE_CONFIG_FILENAME
 
 
 # ------- Customizing identity mapping -------
@@ -120,19 +133,6 @@ globus-connect-server node setup \
 }
 
 
-# ------- Restrict sharing to users from a specific domain -------
-# Step 1: Create the sharing authentication policy
-globus-connect-server auth-policy create \
---include uchicago.edu \
---description "Only share with users that present a uchicago.edu credential" \
---display-name "Restricted uchicago.edu sharing policy"
-
-# Step 2: Attach the policy to the mapped collection
-globus-connect-server collection update \
-MAPPED_COLLECTION_ID \
---guest-auth-policy-id AUTH_POLICY_UUID 
-
-
 # ------- Accessing non-POSIX storage -------
 # Creating a storage gateway to access AWS S3 buckets
 globus-connect-server storage-gateway create s3 \
@@ -152,4 +152,9 @@ globus-connect-server collection create STORAGE_GATEWAY_ID / 'My Tutorial S3 Col
 globus-connect-server node cleanup
 globus-connect-server endpoint cleanup --deployment-key DEPLOYMENT_KEY_FILENAME
 
+
+# ------- Using client credentials to manage GCS resources -------
+# Sample code: gist.github.com/vasv/cdb8607e2bfab08634b5aa99389e87c7
+
 ### EOF
+
