@@ -96,6 +96,41 @@ globus-connect-server node setup \
 --deployment-key DEPLOYMENT_KEY_FILENAME \
 --import-node NODE_CONFIG_FILENAME
 
+# ------- Customizing identity mapping -------
+# Create a file with identity mapping rules (id-rules.conf)
+{
+  "DATA_TYPE": "expression_identity_mapping#1.0.0",
+  "mappings": [
+    {
+      "source": "{username}",
+      "match": “YOUR_ID@YOUR_IDP",
+      "output": "YOUR_SPECIAL_LOCAL_USERNAME",
+      "ignore_case": false,
+      "literal": false
+    },
+    {
+      "source": "{username}",
+      "match": ".*@uchicago.edu",
+      "output": "{0}",
+      "ignore_case": false,
+      "literal": false
+    }
+  ]
+}
+
+
+# ------- Restrict sharing to users from a specific domain -------
+# Step 1: Create the sharing authentication policy
+globus-connect-server auth-policy create \
+--include uchicago.edu \
+--description "Only share with users that present a uchicago.edu credential" \
+--display-name "Restricted uchicago.edu sharing policy"
+
+# Step 2: Attach the policy to the mapped collection
+globus-connect-server collection update \
+MAPPED_COLLECTION_ID \
+--guest-auth-policy-id AUTH_POLICY_UUID 
+
 
 # ------- Accessing non-POSIX storage -------
 # Creating a storage gateway to access AWS S3 buckets
