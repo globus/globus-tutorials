@@ -1,4 +1,4 @@
-# Globus Tutorial Sample Code and Command Cheatsheet
+# Sample Code and Command Cheatsheets for Globus Tutorials
 
 ## Globus Connect Server Exercises
 To install and configure Globus Connect Server v5 on your EC2 instance...
