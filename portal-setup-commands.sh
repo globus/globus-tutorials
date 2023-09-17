@@ -1,5 +1,10 @@
-# Register an app with Globus Auth: https://developers.globus.org
+# Commands for installing a portal using the Django Globus Portal Framework
+# https://github.com/globus/django-globus-portal-framework
+
+# Register an app with Globus Auth:
+# https://app.globus.org/settings/developers/registration/confidential_client
 # Use the following redirect URLs and get your client ID and secret
+# Important: Replace "N" with the number of your EC2 instance
 https://tutN.globusdemo.org:8443/
 https://tutN.globusdemo.org:8443/complete/globus/
 
