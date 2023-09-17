@@ -1,5 +1,4 @@
-# Register a Globus Connect Server with Globus Auth: https://developers.globus.org
-# Note the GCS client ID and secret; you will use it in multiple commands below
+# Commands for installing and configurig Globus Connect Server
 
 # ------- Creating the endpoint -------
 globus-connect-server endpoint setup \
