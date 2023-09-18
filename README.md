@@ -1,5 +1,18 @@
 # Sample Code and Command Cheatsheets for Globus Tutorials
 
+We use the following resources throughout the tutorial:
+
+#### Collections
+* Globus Tutorials on ALCF Eagle (Note: Often down for maintenance)
+   * Collection ID: a6f165fa-aee2-4fe5-95f3-97429c28bf82
+   * HTTP Hostname: g-fe1c1.fd635.8443.data.globus.org 
+* Tutorial Guest Collection
+   * Collection ID: fe2feb64-4ac0-4a40-ba90-94b99d06dd2c
+   * HTTP Hostname: g-13a6e8.f9e26.5898.data.globus.org
+#### Search Indeces
+   * FEMA data search index ID: 6be80847-70f9-4441-9075-f9348d6b044a (subjects point to Globus Tutorials on ALCF Eagle)
+   * LADI data search index ID: c488d4a6-d0ee-4281-972b-5912371901ea (subjects point to Tutorial Guest Collection)
+
 ## Globus Connect Server Exercises
 To install and configure Globus Connect Server v5 on your EC2 instance use [the commands here](gcs-commands.sh).
 
