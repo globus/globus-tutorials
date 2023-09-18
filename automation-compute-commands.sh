@@ -50,8 +50,8 @@ cd ~/globus-flows-trigger-examples
 
 # Deploy the transfer, compute, transfer, and share flow
 ./deploy_flow.py \
---flowdef transfer_compute_share/definition.json
---schema transfer_compute_share/schema.json
+--flowdef transfer_compute_share/definition.json \
+--schema transfer_compute_share/schema.json \
 --title 'YOUR_FLOW_NAME'
 
 # Edit trigger_transfer_compute_share_flow.py
@@ -73,6 +73,18 @@ cd ~/globus-flows-trigger-examples
 ./trigger_transfer_compute_share_flow.py \
 --watchdir /home/devN/images \
 --patterns .done
+
+# Fire the trigger
+# Use a tmux session or a separate shell
+$ tmux
+
+# Create files that mimic an instrument generating data
+$ cp ~/test-data/*.png ~/images
+
+# Create a file that matches the pattern being monitored
+# Sadly, no instrument is actually this "nice"!
+$ touch ~/images/iam.done
+
 
 ### Invoke a function
 
