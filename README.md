@@ -9,7 +9,11 @@ We use the following resources throughout the tutorial:
 * Tutorial Guest Collection
    * Collection ID: fe2feb64-4ac0-4a40-ba90-94b99d06dd2c
    * HTTP Hostname: g-13a6e8.f9e26.5898.data.globus.org
-#### Search Indeces
+
+#### Groups
+   * Tutorial Users group ID: 50b6a29c-63ac-11e4-8062-22000ab68755 (join for access to various tutorial resources)
+
+#### Search Indices
    * FEMA data search index ID: 6be80847-70f9-4441-9075-f9348d6b044a (subjects point to Globus Tutorials on ALCF Eagle)
    * LADI data search index ID: c488d4a6-d0ee-4281-972b-5912371901ea (subjects point to Tutorial Guest Collection)
 
