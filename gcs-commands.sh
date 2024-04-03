@@ -47,11 +47,11 @@ globus-connect-server storage-gateway create posix \
 # Create a mapped collection to access data via the restricted storage gateway
 globus-connect-server collection create STORAGE_GATEWAY_ID / "My Tutorial Mapped Collection – Restricted"
 
-# Make endpoint "managed" ...or ask the Globus team to do it
+# Subscribe your endpoint ...or ask the Globus team to do it
 globus-connect-server endpoint set-subscription-id YOUR_SUBSCRIPTION_ID
 
-# Allow sharing on mapped collection
-globus-connect-server collection update COLLECTION_ID --allow-guest-collections
+# Allow sharing (creation of guest collections) on mapped collection
+globus-connect-server collection update MAPPED_COLLECTION_ID --allow-guest-collections
 
 # Allow browser-based HTTPS uploads and downloads
 globus-connect-server collection update COLLECTION_ID --enable-https
@@ -60,6 +60,9 @@ globus-connect-server collection update COLLECTION_ID --enable-https
 # Note: $USER is not a shell variable; it has special meaning to GCS
 globus-connect-server collection update COLLECTION_ID --default-directory '/home/$USER/'
 
+# Delegating administration/management using endpoint roles
+# Make members of the Tutorial Users group Activity Managers on your endpoint
+globus-connect-server endpoint role create activity_manager --principal-type group 50b6a29c-63ac-11e4-8062-22000ab68755
 
 # ------- Restrict sharing to users from a specific domain -------
 # Step 1: Create the sharing authentication policy
