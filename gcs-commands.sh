@@ -1,4 +1,4 @@
-# Commands for installing and configurig Globus Connect Server
+# Commands for installing and configuring Globus Connect Server
 
 # ------- Creating the endpoint -------
 globus-connect-server endpoint setup \
