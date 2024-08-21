@@ -10,6 +10,11 @@ globus-connect-server endpoint setup \
 # Add this server as a DTN on the endpoint
 sudo globus-connect-server node setup
 
+# You may be prompted to explicitly provide the IP address of the node
+# Get this by running: dig YOUR_SERVER_DNS_NAME
+# Run the node setup command as follows
+sudo globus-connect-server node setup --ip-address YOUR_NODE_IP_ADDRESS
+
 # Activate endpoint configuration
 sudo systemctl reload apache2
 
